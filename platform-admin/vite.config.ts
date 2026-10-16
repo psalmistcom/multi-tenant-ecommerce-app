@@ -8,7 +8,7 @@ import path from 'path/win32'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   server: {
