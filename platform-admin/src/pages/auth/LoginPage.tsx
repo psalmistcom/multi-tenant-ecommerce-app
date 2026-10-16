@@ -11,13 +11,25 @@ export default function LoginPage() {
   const [password, setPassword] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string | null>("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setPassword("");
+      setEmail("");
+    }, 2000);
+  };
+
   return (
     <div className="w-full max-w-sm">
       <h2 className="text-2xl font-bold">Sign In</h2>
       <p className="mt-1.5 text-sm text-muted-foreground">
         Access the platform admin console.
       </p>
-      <form className="mt-7">
+      <form className="mt-7" onSubmit={handleSubmit}>
         <FieldGroup>
           <Field>
             <FieldLabel htmlFor="email">Work Email</FieldLabel>
@@ -25,11 +37,11 @@ export default function LoginPage() {
               id="email"
               type="email"
               placeholder="you@platform.com"
-              autoCapitalize="username"
               className="h-11"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
             />
           </Field>
           <Field>
@@ -51,7 +63,7 @@ export default function LoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              // disabled={isSubmitting}
+              disabled={isSubmitting}
             />
           </Field>
 

@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router";
 import AuthLayout from "../layouts/AuthLayout";
 import LoginPage from "../pages/auth/LoginPage";
-import RegisterPage from "../pages/auth/RegisterPage";
+import ForgotPasswordPage from "../pages/auth/ForgotPasswordPage";
+import VerifyForgotOtpPage from "../pages/auth/VerifyForgotOtp";
+import ResetPasswordPage from "../pages/auth/ResetPassword";
 
 export default function Routers() {
   return (
@@ -9,7 +11,9 @@ export default function Routers() {
       {/* Auth sections */}
       <Route path="auth" element={<AuthLayout />}>
         <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+        <Route path="forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="forgot-password/otp" element={<VerifyForgotOtpPage />} />
+        <Route path="reset-password" element={<ResetPasswordPage />} />
       </Route>
 
       {/* Dashboard sections */}
