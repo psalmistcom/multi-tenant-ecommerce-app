@@ -1,13 +1,13 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import "./App.css";
+import { Button } from "./components/ui/button";
+import Routers from "./routes";
 
 function App() {
-
   return (
-    <div className="p-4"> Platform admin
-    <Button variant="default"> submit </Button>
-    </div>
-  )
+    <>
+      <Routers />
+    </>
+  );
 }
 
-export default App
+export default App;
