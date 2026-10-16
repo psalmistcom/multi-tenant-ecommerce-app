@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { Button } from "../../components/ui/button";
 import { Spinner } from "../../components/ui/spinner";
 import { ShieldCheckIcon } from "lucide-react";
+import PasswordInput from "../../components/PasswordInput";
 
 export default function LoginPage() {
   const [email, setEmail] = useState<string>("");
@@ -54,9 +55,8 @@ export default function LoginPage() {
                 Forgot Password?
               </Link>
             </div>
-            <Input
+            <PasswordInput
               id="password"
-              type="password"
               className="h-11"
               placeholder="••••••••"
               autoComplete="current-password"
